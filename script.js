@@ -390,3 +390,36 @@ if (dyslexiaButton) {
   });
 
 }
+
+// Acessibilidade: tamanho da fonte
+// Acessibilidade: tamanho da fonte
+let fontSize = 16;
+
+function updateFontSize() {
+    document.documentElement.style.fontSize = fontSize + "px";
+}
+
+const increaseFont = document.getElementById("increaseFont");
+const decreaseFont = document.getElementById("decreaseFont");
+const resetFont = document.getElementById("resetFont");
+
+if (increaseFont) {
+    increaseFont.addEventListener("click", () => {
+        fontSize = Math.min(fontSize + 2, 24);
+        updateFontSize();
+    });
+}
+
+if (decreaseFont) {
+    decreaseFont.addEventListener("click", () => {
+        fontSize = Math.max(fontSize - 2, 12);
+        updateFontSize();
+    });
+}
+
+if (resetFont) {
+    resetFont.addEventListener("click", () => {
+        fontSize = 16;
+        updateFontSize();
+    });
+}

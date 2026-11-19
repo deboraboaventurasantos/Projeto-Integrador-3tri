@@ -318,42 +318,9 @@ function applyFontScale() {
 
 }
 
-const increaseFont = document.getElementById("increaseFont");
-const decreaseFont = document.getElementById("decreaseFont");
-const resetFont = document.getElementById("resetFont");
 
-if (increaseFont) {
 
-  increaseFont.addEventListener("click", () => {
 
-    fontScale = Math.min(130, fontScale + 10);
-    applyFontScale();
-
-  });
-
-}
-
-if (decreaseFont) {
-
-  decreaseFont.addEventListener("click", () => {
-
-    fontScale = Math.max(80, fontScale - 10);
-    applyFontScale();
-
-  });
-
-}
-
-if (resetFont) {
-
-  resetFont.addEventListener("click", () => {
-
-    fontScale = 100;
-    applyFontScale();
-
-  });
-
-}
 
 
 // ============================================
@@ -423,3 +390,69 @@ if (resetFont) {
         updateFontSize();
     });
 }
+
+
+// =====================================
+// ACESSIBILIDADE
+// =====================================
+
+// Alto contraste
+const contrastButton = document.getElementById("contrastButton");
+
+if (contrastButton) {
+    contrastButton.addEventListener("click", () => {
+        document.body.classList.toggle("high-contrast");
+
+        const ativo = document.body.classList.contains("high-contrast");
+        contrastButton.textContent = ativo
+            ? "Desativar alto contraste"
+            : "Alto contraste";
+    });
+}
+
+// Fonte OpenDyslexic
+const dyslexiaButton = document.getElementById("dyslexiaButton");
+
+if (dyslexiaButton) {
+    dyslexiaButton.addEventListener("click", () => {
+        document.body.classList.toggle("dyslexia-font");
+
+        const ativo = document.body.classList.contains("dyslexia-font");
+        dyslexiaButton.textContent = ativo
+            ? "Desativar fonte para dislexia"
+            : "Fonte para dislexia";
+    });
+}
+
+// Aumentar, diminuir e restaurar fonte
+let fontSize = 16;
+
+function updateFontSize() {
+    document.documentElement.style.fontSize = fontSize + "px";
+}
+
+const increaseFont = document.getElementById("increaseFont");
+const decreaseFont = document.getElementById("decreaseFont");
+const resetFont = document.getElementById("resetFont");
+
+if (increaseFont) {
+    increaseFont.addEventListener("click", () => {
+        fontSize = Math.min(fontSize + 2, 28);
+        updateFontSize();
+    });
+}
+
+if (decreaseFont) {
+    decreaseFont.addEventListener("click", () => {
+        fontSize = Math.max(fontSize - 2, 12);
+        updateFontSize();
+    });
+}
+
+if (resetFont) {
+    resetFont.addEventListener("click", () => {
+        fontSize = 16;
+        updateFontSize();
+    });
+}
+

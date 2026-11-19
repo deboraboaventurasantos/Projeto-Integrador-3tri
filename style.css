@@ -857,3 +857,190 @@ na pasta fonts do projeto.
     }
 
 }
+
+
+/* ===== NOVO VISUAL SOL + ÁGUA ===== */
+
+:root {
+    --azul: #087ca7;
+    --azul-escuro: #064766;
+    --azul-claro: #e8f7fc;
+    --amarelo: #ffd447;
+    --fundo: #f5fafc;
+    --texto: #24404d;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.75;
+}
+
+/* Cabeçalho */
+header {
+    padding: 16px 5%;
+    box-shadow: 0 3px 15px #00354d20;
+}
+
+.logo {
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+nav {
+    gap: 12px;
+}
+
+nav a {
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background: #ffffff20;
+}
+
+/* Seções */
+.section {
+    padding: 65px clamp(20px, 7%, 100px);
+}
+
+.section:nth-of-type(even) {
+    background: #edf7fa;
+}
+
+.section h2 {
+    font-size: clamp(25px, 3vw, 34px);
+    line-height: 1.25;
+    margin-bottom: 18px;
+    color: var(--azul-escuro);
+}
+
+.intro {
+    max-width: 760px;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+    gap: 22px;
+    margin: 30px 0;
+    align-items: stretch;
+}
+
+.card {
+    background: #fff;
+    padding: 26px;
+    border: 1px solid #dcecf2;
+    border-bottom: 4px solid var(--azul);
+    border-radius: 18px;
+    box-shadow: 0 7px 22px #06476610;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px #06476620;
+}
+
+.card h3 {
+    color: var(--azul-escuro);
+    font-size: 19px;
+    margin: 12px 0;
+}
+
+.card p {
+    font-size: 15px;
+}
+
+.card strong {
+    color: var(--azul);
+}
+
+/* Blocos de explicação científica */
+.science-box {
+    background: #fff;
+    border: 1px solid #dcecf2;
+    border-left: 5px solid var(--azul);
+    border-radius: 18px;
+    padding: 28px;
+    margin: 25px 0;
+    box-shadow: 0 6px 20px #0647660c;
+}
+
+.science-box h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 12px;
+}
+
+.science-box p {
+    margin-bottom: 12px;
+}
+
+.science-box ul {
+    padding-left: 22px;
+}
+
+.science-box li {
+    margin-bottom: 9px;
+}
+
+/* Simuladores */
+.simulator {
+    background: #e5f5fa;
+}
+
+.simulator-box {
+    background: white;
+    border: 1px solid #dcecf2;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 25px #06476615;
+}
+
+input[type="range"] {
+    accent-color: var(--azul);
+}
+
+/* Botões */
+.btn,
+button {
+    border-radius: 12px;
+    transition: .2s;
+}
+
+.btn:hover,
+button:hover {
+    filter: brightness(.97);
+}
+
+/* Rodapé */
+footer {
+    background: var(--azul-escuro);
+    padding: 45px 20px;
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .section {
+        padding: 42px 18px;
+    }
+
+    .card,
+    .science-box {
+        padding: 21px;
+    }
+
+    .cards {
+        gap: 15px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+}

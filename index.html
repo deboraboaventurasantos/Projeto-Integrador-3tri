@@ -17,7 +17,7 @@
       <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#radiacao">Radiação</a>
-        <a href="#ldr">Sensor LDR</a>
+        <a href="#ldr ou fotodiodo">Sensor LDR ou Fotodiodo</a>
         <a href="#fotodiodo">Fotodiodo</a>
         <a href="#coletor">Coletor solar</a>
         <a href="#piscina">Piscina</a>
@@ -108,17 +108,17 @@
       </div>
     </section>
 
-    <section class="section" id="ldr">
+    <section class="section" id="ldr e fotodiodo">
       <div class="section-heading">
         <p class="eyebrow">SENSOR DE LUMINOSIDADE</p>
         <h2>Como funciona o sensor LDR?</h2>
-        <p>O LDR (Light Dependent Resistor), ou resistor dependente de luz, é um componente cuja resistência elétrica varia de acordo com a iluminação recebida.</p>
+        <p>O LDR (Light Dependent Resistor), O princípio de funcionamento do LDR baseia-se na variação da resistência apresentada entre seus terminais, a qual varia conforme a incidência de luz sobre ele.</p>
       </div>
       <div class="split-layout">
         <div class="technical-copy">
           <h3>O princípio físico</h3>
-          <p>O funcionamento do LDR está relacionado à fotocondutividade. Quando a luz atinge o material semicondutor, os fótons transferem energia aos elétrons. Alguns elétrons podem passar da banda de valência para a banda de condução.</p>
-          <p>Com mais portadores de carga disponíveis, a condutividade aumenta e a resistência elétrica do componente geralmente diminui.</p>
+          <p>O material semicondutor no LDR é sensível à radiação luminosa, particularmente à luz visível. 
+Quando a luz incide sobre o material semicondutor, ela excita os elétrons dentro do material, promovendo-os da banda de valência para a banda de condução. Isso cria elétrons livres, que são capazes de se mover pelo material, reduzindo assim a resistência elétrica (ou, alternativamente, aumentando sua condutividade elétrica). </p>
           <div class="note-panel compact">
             <strong>Ideia principal</strong>
             <p>Mais iluminação costuma significar menor resistência no LDR.</p>
@@ -138,20 +138,19 @@
       </div>
       <div class="note-panel">
         <h3>Divisor de tensão</h3>
-        <p>O LDR pode fazer parte de um circuito divisor de tensão. Quando sua resistência muda, a tensão de saída também varia. Um microcontrolador pode ler essa tensão e usar o valor em um programa. O circuito precisa ser dimensionado corretamente para limitar a corrente e proteger os componentes.</p>
+        <p>O LDR pode fazer parte de um circuito divisor de tensão. Quando sua resistência muda, a tensão de saída também varia. Um microcontrolador pode ler essa tensão e usar o valor em um programa. O circuito precisa ser dimensionado corretamente para limitar a corrente e proteger os componentes. O material semicondutor no LDR é sensível à radiação luminosa, particularmente à luz visível. 
+Quando a luz incide sobre o material semicondutor, ela excita os elétrons dentro do material, promovendo-os da banda de valência para a banda de condução. Isso cria elétrons livres, que são capazes de se mover pelo material, reduzindo assim a resistência elétrica (ou, alternativamente, aumentando sua condutividade elétrica). </p>
       </div>
-    </section>
 
-    <section class="section section-soft" id="fotodiodo">
-      <div class="section-heading">
+        <div class="section-heading">
         <p class="eyebrow">DETECÇÃO ÓPTICA</p>
         <h2>Como funciona o fotodiodo?</h2>
-        <p>O fotodiodo é um componente semicondutor que detecta luz e converte parte da energia luminosa em um sinal elétrico.</p>
+        <p>O fotodiodo é um componente eletrônico que tem a função de detectar a luz e transformar essa energia luminosa em sinal elétrico. Seu funcionamento acontece quando a luz atinge a região sensível do componente, fazendo com que os fótons (partículas de luz) transfiram energia aos elétrons do material semicondutor. Com isso, são gerados pares de elétrons e lacunas, permitindo a passagem de corrente elétrica.</p>
       </div>
       <div class="card-grid two">
         <article class="info-card">
           <h3>Conversão de luz em eletricidade</h3>
-          <p>Quando os fótons atingem a região sensível do fotodiodo, podem gerar pares de elétrons e lacunas no semicondutor. Isso permite a produção de uma corrente elétrica relacionada à luz recebida.</p>
+          <p>Quando a intensidade da luz aumenta, a quantidade de corrente elétrica produzida pelo fotodiodo também aumenta. Já quando há pouca luz, a corrente diminui. Quando não recebe luz, ele apresenta apenas uma pequena corrente, chamada de corrente escura.</p>
         </article>
         <article class="info-card">
           <h3>Corrente escura</h3>
@@ -167,6 +166,7 @@
       </div>
     </section>
 
+    
     <section class="section" id="posicoes">
       <div class="section-heading">
         <p class="eyebrow">EXPERIMENTO E OBSERVAÇÃO</p>
@@ -175,7 +175,8 @@
       </div>
       <div class="note-panel">
         <h3>Relação com a distância</h3>
-        <p>Para uma fonte pontual ideal, a intensidade recebida varia aproximadamente com o inverso do quadrado da distância. Essa é uma aproximação didática; fontes extensas e a luz solar exigem outras considerações.</p>
+        <p>Para uma fonte pontual ideal, a intensidade recebida varia aproximadamente com o inverso do quadrado da distância. Essa é uma aproximação didática; fontes extensas e a luz solar exigem outras considerações. O procedimento consiste em posicionar o sensor em diferentes pontos, mantendo a mesma fonte de luz. Em cada posição, realiza-se uma medição e anotam-se os valores obtidos. Depois, comparamos os resultados para identificar onde a intensidade luminosa é maior ou menor.</p>
+    <p>Assim, podemos observar que a intensidade luminosa geralmente diminui à medida que nos afastamos da fonte de luz e aumenta quando nos aproximamos dela. Essa comparação permite entender como a luz se distribui pelo ambiente.</p>
       </div>
       <div class="simulator-card">
         <div class="simulator-intro">
@@ -277,28 +278,112 @@
       </div>
     </section>
 
-    <section class="section" id="simuladores">
-      <div class="section-heading">
-        <p class="eyebrow">EXPERIMENTE</p>
-        <h2>Simulador de luminosidade</h2>
-        <p>Observe como a intensidade da luz influencia uma leitura simplificada do sensor LDR.</p>
-      </div>
-      <div class="simulator-card light-simulator">
-        <div class="simulator-intro">
-          <p class="eyebrow">SIMULADOR 03</p>
-          <h3>Intensidade luminosa</h3>
-          <p>Movimente o controle para alterar a iluminação simulada.</p>
+   
+<section id="simuladores" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">Experiências interativas</span>
+      <h2>Simuladores</h2>
+      <p>
+        Explore os sensores de luz, entenda a incidência solar
+        e descubra como a energia do Sol pode aquecer a água.
+      </p>
+    </div>
+
+    <div class="simulators-grid">
+
+      <!-- SIMULADOR 1 -->
+      <article class="simulator-card">
+        <div class="simulator-number">01</div>
+        <h3>LDR ou fotodiodo?</h3>
+        <p>
+          Escolha o sensor mais adequado para cada situação
+          e descubra como ele funciona.
+        </p>
+
+        <div class="simulator-content">
+          <label for="sensorScenario">Escolha uma situação:</label>
+          <select id="sensorScenario">
+            <option value="automatic">Acender uma lâmpada automaticamente quando escurece</option>
+            <option value="precision">Detectar pequenas variações de luz rapidamente</option>
+            <option value="brightness">Monitorar a luminosidade de um ambiente</option>
+            <option value="lightSignal">Detectar pulsos rápidos de luz</option>
+          </select>
+
+          <button type="button" id="checkSensor" class="btn-primary">
+            Verificar sensor
+          </button>
+
+          <div id="sensorResult" class="simulator-result" aria-live="polite">
+            Escolha uma situação para começar.
+          </div>
         </div>
-        <label class="range-label" for="lightRange">Intensidade da luz: <strong id="lightValue">50%</strong></label>
-        <input type="range" id="lightRange" min="0" max="100" value="50">
-        <div class="light-meter"><div class="meter-fill" id="meterFill"></div></div>
-        <div class="result-grid">
-          <div class="result-box"><span>Resistência relativa do LDR</span><strong id="ldrResistance">50%</strong></div>
-          <div class="result-box"><span>Estado da iluminação</span><strong id="lightState">Iluminação moderada</strong></div>
+      </article>
+
+      <!-- SIMULADOR 2 -->
+      <article class="simulator-card">
+        <div class="simulator-number">02</div>
+        <h3>Horários do Sol</h3>
+        <p>
+          Escolha um horário e observe como a incidência da
+          radiação solar pode variar ao longo do dia.
+        </p>
+
+        <div class="simulator-content">
+          <label for="sunTime">Escolha o horário:</label>
+          <select id="sunTime">
+            <option value="morning">Manhã</option>
+            <option value="noon">Meio-dia</option>
+            <option value="afternoon">Tarde</option>
+          </select>
+
+          <div class="sun-visual" id="sunVisual">
+            <div class="sun"></div>
+            <div class="sun-ground"></div>
+          </div>
+
+          <div id="sunResult" class="simulator-result" aria-live="polite">
+            Selecione um horário para visualizar a explicação.
+          </div>
         </div>
-        <p class="disclaimer">Modelo ilustrativo: a resistência real de um LDR não varia de forma linear e depende das características do componente.</p>
-      </div>
-    </section>
+      </article>
+
+      <!-- SIMULADOR 3 -->
+      <article class="simulator-card">
+        <div class="simulator-number">03</div>
+        <h3>Desafio: aqueça a piscina</h3>
+        <p>
+          Escolha as condições do sistema e veja uma estimativa
+          simplificada do aquecimento da água.
+        </p>
+
+        <div class="simulator-content">
+          <label for="poolArea">Área do coletor solar (m²):</label>
+          <input type="range" id="poolArea" min="1" max="20" value="8">
+          <output id="poolAreaValue">8 m²</output>
+
+          <label for="sunHours">Horas de exposição ao Sol:</label>
+          <input type="range" id="sunHours" min="1" max="10" value="5">
+          <output id="sunHoursValue">5 horas</output>
+
+          <label for="poolVolume">Volume de água (litros):</label>
+          <input type="range" id="poolVolume" min="500" max="10000" step="500" value="5000">
+          <output id="poolVolumeValue">5000 litros</output>
+
+          <button type="button" id="calculatePool" class="btn-primary">
+            Calcular aquecimento
+          </button>
+
+          <div id="poolResult" class="simulator-result" aria-live="polite">
+            Ajuste os valores e calcule o resultado.
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
 
     <section class="section section-soft" id="automacao">
       <div class="section-heading">

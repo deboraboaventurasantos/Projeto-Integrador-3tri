@@ -1,1 +1,861 @@
 
+/* CONFIGURAÇÕES GERAIS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --azul: #087ca7;
+    --azul-escuro: #064766;
+    --azul-claro: #dff5ff;
+    --amarelo: #ffd447;
+    --branco: #ffffff;
+    --texto: #173746;
+    --fundo: #f2fbff;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+button, a, input {
+    font: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid #e58b00;
+    outline-offset: 4px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 10px;
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    z-index: 9999;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+
+/* CABEÇALHO */
+
+header {
+    background: var(--azul-escuro);
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 800;
+    color: var(--amarelo);
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 17px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--amarelo);
+}
+
+.menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+    border: none;
+    font-size: 27px;
+    cursor: pointer;
+}
+
+
+/* INÍCIO */
+
+.hero {
+    min-height: 480px;
+    padding: 70px 8%;
+    background: linear-gradient(
+        120deg,
+        #087ca7,
+        #43bde0,
+        #a8e8f5
+    );
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.tag {
+    background: #ffffff35;
+    color: #063c56;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 5vw, 60px);
+    line-height: 1.15;
+    color: white;
+    margin: 25px 0;
+}
+
+.hero p {
+    color: #083b51;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.sun-animation {
+    font-size: clamp(100px, 20vw, 200px);
+    animation: floating 4s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+/* BOTÕES */
+
+.btn {
+    display: inline-block;
+    background: var(--amarelo);
+    color: #263b43;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #ffe889;
+}
+
+
+/* SEÇÕES */
+
+.section {
+    padding: 70px 8%;
+}
+
+.section h2 {
+    color: var(--azul-escuro);
+    font-size: clamp(25px, 4vw, 36px);
+    margin-bottom: 20px;
+}
+
+.intro {
+    max-width: 800px;
+    margin-bottom: 35px;
+    font-size: 18px;
+}
+
+
+/* CARTÕES */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 230px), 1fr)
+    );
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #06476612;
+    border-bottom: 5px solid var(--azul);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card h3 {
+    color: var(--azul);
+    margin: 12px 0;
+}
+
+.card strong {
+    display: block;
+    margin-top: 15px;
+}
+
+.emoji {
+    font-size: 45px;
+}
+
+
+/* CONTEÚDO CIENTÍFICO */
+
+.science-box {
+    background: var(--azul-claro);
+    border-left: 6px solid var(--azul);
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.science-box h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 10px;
+}
+
+
+/* SIMULADOR */
+
+.simulator {
+    background: #e3f7ff;
+}
+
+.simulator-box {
+    background: white;
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 5px 25px #00000010;
+}
+
+.simulator-box label {
+    display: block;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+input[type="range"] {
+    width: 100%;
+    accent-color: var(--azul);
+    cursor: pointer;
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 13px;
+}
+
+.sensor-display {
+    text-align: center;
+    padding: 35px 0;
+}
+
+.sim-sun {
+    font-size: 80px;
+    transition: .3s;
+}
+
+.sensor-display h3 {
+    color: var(--azul);
+    font-size: 40px;
+}
+
+.progress {
+    width: 100%;
+    height: 17px;
+    background: #d9e8ed;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#progressBar {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(
+        90deg,
+        #087ca7,
+        #ffd447
+    );
+    transition: width .3s;
+}
+
+.sensor-data {
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+
+/* COMPARATIVO */
+
+.comparison {
+    max-width: 800px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.compare-item {
+    margin-bottom: 25px;
+}
+
+.compare-item span {
+    font-weight: 800;
+}
+
+.bar {
+    height: 25px;
+    background: #e3e9ec;
+    border-radius: 20px;
+    margin: 8px 0;
+    overflow: hidden;
+}
+
+.uv {
+    width: 35%;
+    height: 100%;
+    background: #8747d9;
+}
+
+.visible {
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        #8b5cf6,
+        #087ca7,
+        #ffcf39
+    );
+}
+
+.infra {
+    width: 90%;
+    height: 100%;
+    background: #e97839;
+}
+
+
+/* AUTOMAÇÃO */
+
+.automation {
+    background: #fff9e5;
+}
+
+.automation-box {
+    max-width: 600px;
+    text-align: center;
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    margin: auto;
+    box-shadow: 0 5px 20px #00000010;
+}
+
+.lamp {
+    font-size: 100px;
+    filter: grayscale(1);
+    transition: .4s;
+}
+
+.lamp.on {
+    filter: none;
+    text-shadow: 0 0 30px #ffd447;
+}
+
+.automation-box h3 {
+    margin: 15px 0;
+}
+
+
+/* ANIMAÇÃO SOL E TERRA */
+
+.animation-area {
+    min-height: 230px;
+    background: linear-gradient(
+        90deg,
+        #dff5ff,
+        #ffffff
+    );
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+}
+
+.animated-sun {
+    font-size: 75px;
+    animation: floating 3s infinite;
+}
+
+.earth {
+    font-size: 75px;
+    animation: rotateEarth 12s linear infinite;
+}
+
+@keyframes rotateEarth {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.light-rays {
+    display: flex;
+    gap: 10px;
+    color: #e5a900;
+    font-size: 30px;
+    animation: rays 1.5s infinite alternate;
+}
+
+@keyframes rays {
+    from {
+        opacity: .3;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(10px);
+    }
+}
+
+
+/* ACESSIBILIDADE */
+
+.access-controls {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+}
+
+.access-controls button {
+    padding: 12px;
+    border: 2px solid var(--azul);
+    background: white;
+    color: var(--azul-escuro);
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 8px 5px 0 0;
+    font-weight: 700;
+}
+
+.access-controls button:hover {
+    background: var(--azul-claro);
+}
+
+.high-contrast {
+    background: #000 !important;
+    color: #fff !important;
+}
+
+.high-contrast header,
+.high-contrast footer {
+    background: #000 !important;
+    border: 2px solid white;
+}
+
+.high-contrast .section,
+.high-contrast .card,
+.high-contrast .science-box,
+.high-contrast .simulator-box,
+.high-contrast .comparison,
+.high-contrast .automation-box,
+.high-contrast .access-controls {
+    background: #000 !important;
+    color: #fff !important;
+    border: 2px solid yellow;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast p,
+.high-contrast a,
+.high-contrast strong,
+.high-contrast label {
+    color: #fff !important;
+}
+
+.dyslexia-font {
+    font-family: 'OpenDyslexic', sans-serif !important;
+    letter-spacing: .06em;
+    line-height: 2;
+}
+
+
+/* MAPA DO SITE */
+
+.map-links {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(100%, 250px), 1fr)
+    );
+    gap: 15px;
+}
+
+.map-links a {
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    color: var(--azul-escuro);
+    text-decoration: none;
+    font-weight: 800;
+    border-left: 5px solid var(--amarelo);
+}
+
+.map-links a:hover {
+    background: var(--azul-claro);
+}
+
+
+/* RODAPÉ */
+
+footer {
+    background: var(--azul-escuro);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 {
+    color: var(--amarelo);
+    margin-bottom: 10px;
+}
+
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 850px) {
+
+    header {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding: 15px 0;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .sun-animation {
+        font-size: 120px;
+    }
+
+    .section {
+        padding: 45px 6%;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .hero {
+        padding: 50px 6%;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .simulator-box {
+        padding: 20px;
+    }
+
+    .range-labels {
+        font-size: 11px;
+    }
+
+    .animation-area {
+        min-height: 160px;
+    }
+
+    .animated-sun,
+    .earth {
+        font-size: 50px;
+    }
+
+}
+
+
+/* =====================================
+   NOVAS SEÇÕES CIENTÍFICAS
+===================================== */
+
+#ldr,
+#fotodiodo,
+#coletor,
+#limitacoes {
+    scroll-margin-top: 100px;
+}
+
+#ldr .science-box,
+#fotodiodo .science-box,
+#coletor .science-box,
+#limitacoes .science-box {
+    margin-bottom: 25px;
+}
+
+.science-box p {
+    margin-bottom: 12px;
+}
+
+.science-box ul {
+    padding-left: 25px;
+}
+
+
+/* =====================================
+   SIMULADOR DE POSIÇÕES
+===================================== */
+
+.position-bar {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(
+        90deg,
+        #087ca7,
+        #ffd447
+    );
+    border-radius: 20px;
+    transition: width .4s ease;
+}
+
+#posicoes .simulator-box label,
+#piscina .simulator-box label {
+    margin-top: 22px;
+}
+
+#positionConclusion {
+    margin-top: 25px;
+    padding: 15px;
+    background: var(--azul-claro);
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+
+/* =====================================
+   ILUSTRAÇÃO DA PISCINA
+===================================== */
+
+.pool-illustration {
+    background: linear-gradient(
+        180deg,
+        #a8e8f5,
+        #dff5ff
+    );
+    border-radius: 20px;
+    padding: 25px;
+    text-align: center;
+    margin: 30px 0;
+    overflow: hidden;
+}
+
+.pool-sun {
+    font-size: 70px;
+    animation: floating 3s infinite;
+}
+
+.pool-rays {
+    font-size: 35px;
+    color: #e5a900;
+    animation: rays 1.5s infinite alternate;
+}
+
+.pool-water {
+    background: linear-gradient(
+        180deg,
+        #36b9df,
+        #087ca7
+    );
+    border-radius: 15px;
+    padding: 35px 10px;
+    font-size: 45px;
+    margin-top: 10px;
+    animation: waterMove 3s infinite ease-in-out;
+}
+
+@keyframes waterMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+
+/* =====================================
+   RESULTADO DO AQUECIMENTO
+===================================== */
+
+.pool-result {
+    background: var(--azul-claro);
+    border: 2px solid var(--azul);
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.pool-result h3 {
+    color: var(--azul-escuro);
+    margin-bottom: 15px;
+}
+
+.pool-result strong {
+    display: block;
+    color: var(--azul-escuro);
+    font-size: clamp(25px, 5vw, 36px);
+    margin: 10px 0 20px;
+}
+
+.simulation-warning {
+    background: #fff3cd;
+    color: #624b00;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+
+/* =====================================
+   RESPONSIVIDADE DAS NOVAS SEÇÕES
+===================================== */
+
+@media (max-width: 600px) {
+
+    #posicoes .simulator-box,
+    #piscina .simulator-box {
+        padding: 20px;
+    }
+
+    .pool-illustration {
+        padding: 15px;
+    }
+
+    .pool-water {
+        font-size: 35px;
+    }
+
+    .pool-result {
+        padding: 18px;
+    }
+
+}
+
+
+/* =====================================
+   FONTE ALTERNATIVA PARA DISLEXIA
+===================================== */
+
+/*
+Coloque o arquivo OpenDyslexic-Regular.woff2
+na pasta fonts do projeto.
+*/
+
+@font-face {
+    font-family: 'OpenDyslexic';
+    src: url('../fonts/OpenDyslexic-Regular.woff2')
+        format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.dyslexia-font {
+    font-family: 'OpenDyslexic', Arial, sans-serif !important;
+}
+
+
+/* =====================================
+   MOVIMENTO REDUZIDO
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .pool-water,
+    .pool-sun,
+    .position-bar {
+        animation: none !important;
+        transition: none !important;
+    }
+
+}
+

@@ -305,65 +305,17 @@ if (automationButton && automationState) {
 }
 
 
+
 // ============================================
-// 6. ACESSIBILIDADE — TAMANHO DA FONTE
+// 6. ACESSIBILIDADE
 // ============================================
+
+// TAMANHO DA FONTE
 
 let fontScale = 100;
 
 function applyFontScale() {
-
-  document.documentElement.style.fontSize =
-    `${fontScale}%`;
-
-}
-
-
-
-
-
-
-// ============================================
-// 7. ACESSIBILIDADE — ALTO CONTRASTE
-// ============================================
-
-const contrastButton =
-  document.getElementById("contrastButton");
-
-if (contrastButton) {
-
-  contrastButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("high-contrast");
-
-  });
-
-}
-
-
-// ============================================
-// 8. ACESSIBILIDADE — FONTE OPEN DYSLEXIC
-// ============================================
-
-const dyslexiaButton =
-  document.getElementById("dyslexiaButton");
-
-if (dyslexiaButton) {
-
-  dyslexiaButton.addEventListener("click", () => {
-
-    document.body.classList.toggle("dyslexia-font");
-
-  });
-
-}
-
-// Acessibilidade: tamanho da fonte
-// Acessibilidade: tamanho da fonte
-let fontSize = 16;
-
-function updateFontSize() {
-    document.documentElement.style.fontSize = fontSize + "px";
+    document.documentElement.style.fontSize = fontScale + "%";
 }
 
 const increaseFont = document.getElementById("increaseFont");
@@ -372,31 +324,28 @@ const resetFont = document.getElementById("resetFont");
 
 if (increaseFont) {
     increaseFont.addEventListener("click", () => {
-        fontSize = Math.min(fontSize + 2, 24);
-        updateFontSize();
+        fontScale = Math.min(fontScale + 10, 150);
+        applyFontScale();
     });
 }
 
 if (decreaseFont) {
     decreaseFont.addEventListener("click", () => {
-        fontSize = Math.max(fontSize - 2, 12);
-        updateFontSize();
+        fontScale = Math.max(fontScale - 10, 80);
+        applyFontScale();
     });
 }
 
 if (resetFont) {
     resetFont.addEventListener("click", () => {
-        fontSize = 16;
-        updateFontSize();
+        fontScale = 100;
+        applyFontScale();
     });
 }
 
 
-// =====================================
-// ACESSIBILIDADE
-// =====================================
+// ALTO CONTRASTE
 
-// Alto contraste
 const contrastButton = document.getElementById("contrastButton");
 
 if (contrastButton) {
@@ -404,13 +353,16 @@ if (contrastButton) {
         document.body.classList.toggle("high-contrast");
 
         const ativo = document.body.classList.contains("high-contrast");
+
         contrastButton.textContent = ativo
             ? "Desativar alto contraste"
             : "Alto contraste";
     });
 }
 
-// Fonte OpenDyslexic
+
+// FONTE OPENDYSLEXIC
+
 const dyslexiaButton = document.getElementById("dyslexiaButton");
 
 if (dyslexiaButton) {
@@ -418,41 +370,11 @@ if (dyslexiaButton) {
         document.body.classList.toggle("dyslexia-font");
 
         const ativo = document.body.classList.contains("dyslexia-font");
+
         dyslexiaButton.textContent = ativo
             ? "Desativar fonte para dislexia"
             : "Fonte para dislexia";
     });
 }
 
-// Aumentar, diminuir e restaurar fonte
-let fontSize = 16;
-
-function updateFontSize() {
-    document.documentElement.style.fontSize = fontSize + "px";
-}
-
-const increaseFont = document.getElementById("increaseFont");
-const decreaseFont = document.getElementById("decreaseFont");
-const resetFont = document.getElementById("resetFont");
-
-if (increaseFont) {
-    increaseFont.addEventListener("click", () => {
-        fontSize = Math.min(fontSize + 2, 28);
-        updateFontSize();
-    });
-}
-
-if (decreaseFont) {
-    decreaseFont.addEventListener("click", () => {
-        fontSize = Math.max(fontSize - 2, 12);
-        updateFontSize();
-    });
-}
-
-if (resetFont) {
-    resetFont.addEventListener("click", () => {
-        fontSize = 16;
-        updateFontSize();
-    });
-}
 

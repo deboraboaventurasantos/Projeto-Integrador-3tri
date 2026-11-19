@@ -239,20 +239,6 @@ Quando a luz incide sobre o material semicondutor, ela excita os elétrons dentr
         </div>
       </div>
      
-        <div class="form-grid">
-          <label>Irradiância solar (W/m²)<input type="number" id="irradiance" min="0" max="1500" value="600"></label>
-          <label>Área do coletor (m²)<input type="number" id="collectorArea" min="0.1" max="1000" step="0.1" value="4"></label>
-          <label>Tempo de exposição (horas)<input type="number" id="exposureTime" min="0.1" max="24" step="0.1" value="3"></label>
-          <label>Volume de água (litros)<input type="number" id="waterVolume" min="1" max="1000000" value="10000"></label>
-          <label>Eficiência térmica estimada (%)<input type="number" id="efficiency" min="1" max="100" value="35"></label>
-        </div>
-        <button class="button button-primary" id="calculatePool">Calcular estimativa</button>
-        <div class="result-grid" aria-live="polite">
-          <div class="result-box"><span>Energia solar útil estimada</span><strong id="energyResult">90,72 MJ</strong></div>
-          <div class="result-box"><span>Aumento teórico da temperatura</span><strong id="temperatureResult">2,17 °C</strong></div>
-        </div>
-        <p class="disclaimer">Esta é uma estimativa didática simplificada, considerando eficiência constante e sem modelar separadamente todas as perdas térmicas. Não representa uma previsão real da temperatura da piscina.</p>
-      </div>
     </section>
 
    
@@ -347,9 +333,9 @@ Quando a luz incide sobre o material semicondutor, ela excita os elétrons dentr
           <input type="range" id="poolVolume" min="500" max="10000" step="500" value="5000">
           <output id="poolVolumeValue">5000 litros</output>
 
-          <button type="button" id="calculatePool" class="btn-primary">
-            Calcular aquecimento
-          </button>
+          <button type="button" id="calculatePoolChallenge" class="btn-primary">
+  Calcular aquecimento
+</button>
 
           <div id="poolResult" class="simulator-result" aria-live="polite">
             Ajuste os valores e calcule o resultado.

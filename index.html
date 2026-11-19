@@ -1,1 +1,1137 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Projeto educativo sobre sensores de luz e acompanhamento da radiação solar.">
+
+    <title>Sol + Água | Sensores de Luz</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- VLibras -->
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#conteudo">
+    Pular para o conteúdo
+</a>
+
+<header>
+    <div class="logo">
+        ☀️ SOL + ÁGUA
+    </div>
+
+    <button class="menu-toggle" id="menuToggle"
+        aria-label="Abrir menu" aria-expanded="false">
+        ☰
+    </button>
+
+    
+<nav id="menu" aria-label="Menu principal">
+    <a href="#inicio">Início</a>
+    <a href="#ciencia">Radiação solar</a>
+    <a href="#ldr">Sensor LDR</a>
+    <a href="#fotodiodo">Fotodiodo</a>
+    <a href="#posicoes">Comparação de luz</a>
+    <a href="#coletor">Coletor solar</a>
+    <a href="#limitacoes">Limitações</a>
+    <a href="#piscina">Piscina escolar</a>
+    <a href="#simulador">Simuladores</a>
+    <a href="#acessibilidade">Acessibilidade</a>
+</nav>
+
+</header>
+
+<main id="conteudo">
+
+    <!-- INÍCIO -->
+
+    <section id="inicio" class="hero">
+
+        <div class="hero-content">
+
+            <span class="tag">CIÊNCIA • TECNOLOGIA • SUSTENTABILIDADE</span>
+
+            <h1>
+                A energia do Sol
+                em nossas mãos!
+            </h1>
+
+            <p>
+                Descubra como os sensores de luz identificam
+                a radiação solar e ajudam a criar tecnologias
+                inteligentes e sustentáveis.
+            </p>
+
+            <a href="#simulador" class="btn">
+                Experimentar simulador
+            </a>
+
+        </div>
+
+        <div class="sun-animation" aria-hidden="true">
+            ☀️
+        </div>
+
+    </section>
+
+
+    <!-- CIÊNCIA -->
+
+    <section id="ciencia" class="section">
+
+        <h2>☀️ Entendendo a radiação eletromagnética</h2>
+
+        <p class="intro">
+            A radiação solar é formada por ondas eletromagnéticas
+            que transportam energia pelo espaço.
+            Ela chega à Terra e pode ser detectada por sensores.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <div class="emoji">🟣</div>
+                <h3>Ultravioleta (UV)</h3>
+                <p>
+                    Possui comprimentos de onda menores que
+                    a luz visível. Parte dela pode afetar a pele
+                    e os olhos.
+                </p>
+                <strong>100 a 400 nm</strong>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🌈</div>
+                <h3>Luz visível</h3>
+                <p>
+                    É a faixa do espectro eletromagnético
+                    percebida pelos olhos humanos.
+                </p>
+                <strong>400 a 700 nm</strong>
+            </article>
+
+            <article class="card">
+                <div class="emoji">🔴</div>
+                <h3>Infravermelho</h3>
+                <p>
+                    Possui comprimentos de onda maiores
+                    que a luz visível e está relacionado
+                    à transferência de energia térmica.
+                </p>
+                <strong>Acima de 700 nm</strong>
+            </article>
+
+        </div>
+
+        <div class="science-box">
+            <h3>Como funciona um sensor de luz?</h3>
+
+            <p>
+                Um sensor de luminosidade, como o LDR
+                (Light Dependent Resistor), altera sua
+                resistência elétrica conforme a intensidade
+                da luz que recebe.
+            </p>
+
+            <p>
+                Em geral, quanto maior a iluminação,
+                menor será a resistência do LDR.
+            </p>
+        </div>
+
+    </section>
+
+
+
+<section id="ldr" class="section">
+
+    <h2>💡 Como funciona o sensor LDR?</h2>
+
+    <p class="intro">
+        O LDR (Light Dependent Resistor) é um componente
+        eletrônico cuja resistência elétrica varia
+        conforme a quantidade de luz que recebe.
+    </p>
+
+    <div class="science-box">
+
+        <h3>O princípio físico do LDR</h3>
+
+        <p>
+            O princípio de funcionamento do LDR baseia-se
+            na variação da resistência apresentada entre
+            seus terminais, de acordo com a incidência
+            de luz sobre o material semicondutor.
+        </p>
+
+        <p>
+            Quando a luz atinge esse material, os fótons
+            transferem energia aos elétrons, fazendo com
+            que alguns passem da banda de valência para
+            a banda de condução.
+        </p>
+
+        <p>
+            Esse processo gera elétrons livres, aumentando
+            a condutividade elétrica e reduzindo a
+            resistência do componente.
+        </p>
+
+        <p>
+            Por isso, quanto maior a luminosidade,
+            geralmente menor será a resistência do LDR.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <h3>🌑 Pouca luz</h3>
+            <p>
+                Menor quantidade de elétrons livres
+                disponíveis para condução.
+            </p>
+            <strong>Maior resistência elétrica.</strong>
+        </article>
+
+        <article class="card">
+            <h3>☀️ Muita luz</h3>
+            <p>
+                Maior quantidade de elétrons livres
+                disponíveis para condução.
+            </p>
+            <strong>Menor resistência elétrica.</strong>
+        </article>
+
+    </div>
+
+    <div class="science-box">
+
+        <h3>Divisor de tensão</h3>
+
+        <p>
+            O LDR pode ser utilizado em um circuito
+            divisor de tensão. Nesse circuito, a mudança
+            da resistência provoca uma variação na tensão
+            de saída, que pode ser interpretada por um
+            microcontrolador.
+        </p>
+
+        <p>
+            O circuito deve ser dimensionado corretamente
+            com resistores e alimentação adequados para
+            limitar a corrente e evitar danos aos componentes.
+        </p>
+
+    </div>
+
+</section>
+
+
+  
+<section id="fotodiodo" class="section">
+
+    <h2>📡 Como funciona o fotodiodo?</h2>
+
+    <p class="intro">
+        O fotodiodo é um componente eletrônico que
+        detecta a luz e transforma a energia luminosa
+        em um sinal elétrico.
+    </p>
+
+    <div class="science-box">
+
+        <h3>O processo de conversão da luz em eletricidade</h3>
+
+        <p>
+            Quando a luz atinge a região sensível do
+            fotodiodo, os fótons transferem energia
+            aos elétrons do material semicondutor.
+        </p>
+
+        <p>
+            Essa energia pode gerar pares de elétrons
+            e lacunas, permitindo a produção de corrente
+            elétrica no componente.
+        </p>
+
+        <p>
+            Quanto maior a intensidade luminosa,
+            geralmente maior será a corrente produzida.
+        </p>
+
+        <p>
+            Na ausência de luz, ainda pode existir uma
+            pequena corrente, chamada corrente escura.
+        </p>
+
+    </div>
+
+    <h3>Onde os fotodiodos são utilizados?</h3>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="emoji">📷</div>
+            <h3>Câmeras</h3>
+            <p>
+                Detectam luz para formar imagens.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="emoji">📱</div>
+            <h3>Controles e sensores</h3>
+            <p>
+                Detectam sinais luminosos e infravermelhos.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="emoji">📦</div>
+            <h3>Leitores ópticos</h3>
+            <p>
+                Identificam informações por meio da luz.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="emoji">📡</div>
+            <h3>Comunicação óptica</h3>
+            <p>
+                Recebem sinais transmitidos por luz.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+
+  
+<section id="posicoes" class="section">
+
+    <h2>📊 Comparação da intensidade luminosa</h2>
+
+    <p class="intro">
+        Como a distância influencia a quantidade de luz
+        recebida por um sensor?
+    </p>
+
+    <div class="science-box">
+
+        <p>
+            Podemos utilizar um fotodiodo ou um luxímetro
+            para comparar a intensidade luminosa em
+            diferentes posições.
+        </p>
+
+        <p>
+            Para uma comparação justa, devemos manter
+            a mesma fonte de luz, o mesmo ângulo de
+            medição e as mesmas condições de iluminação.
+        </p>
+
+        <p>
+            Em uma fonte pontual ideal, a intensidade
+            luminosa diminui aproximadamente com o
+            quadrado da distância.
+        </p>
+
+    </div>
+
+    <div class="simulator-box">
+
+        <h3>Simulador de posições dos sensores</h3>
+
+        <p>
+            Considere uma fonte de luz fixa e três
+            sensores em diferentes distâncias.
+        </p>
+
+        <label for="distanceA">
+            Sensor A — Distância:
+            <strong id="distanceAValue">1 m</strong>
+        </label>
+
+        <input type="range" id="distanceA"
+            min="1" max="10" value="1">
+
+        <label for="distanceB">
+            Sensor B — Distância:
+            <strong id="distanceBValue">3 m</strong>
+        </label>
+
+        <input type="range" id="distanceB"
+            min="1" max="10" value="3">
+
+        <label for="distanceC">
+            Sensor C — Distância:
+            <strong id="distanceCValue">5 m</strong>
+        </label>
+
+        <input type="range" id="distanceC"
+            min="1" max="10" value="5">
+
+        <div class="comparison">
+
+            <div class="compare-item">
+                <span>Sensor A</span>
+                <div class="bar">
+                    <div id="barA" class="position-bar"></div>
+                </div>
+                <strong id="resultA">100 unidades relativas</strong>
+            </div>
+
+            <div class="compare-item">
+                <span>Sensor B</span>
+                <div class="bar">
+                    <div id="barB" class="position-bar"></div>
+                </div>
+                <strong id="resultB">11,11 unidades relativas</strong>
+            </div>
+
+            <div class="compare-item">
+                <span>Sensor C</span>
+                <div class="bar">
+                    <div id="barC" class="position-bar"></div>
+                </div>
+                <strong id="resultC">4 unidades relativas</strong>
+            </div>
+
+        </div>
+
+        <p id="positionConclusion" aria-live="polite">
+            O sensor A recebe a maior intensidade relativa.
+        </p>
+
+    </div>
+
+</section>
+
+
+  
+<section id="coletor" class="section">
+
+    <h2>🌞 Qual é o melhor posicionamento de um coletor solar?</h2>
+
+    <p class="intro">
+        A direção, a inclinação e a intensidade da
+        radiação solar influenciam o aproveitamento
+        da energia do Sol.
+    </p>
+
+    <div class="science-box">
+
+        <h3>Orientação dos painéis no Brasil</h3>
+
+        <p>
+            No Brasil, localizado no Hemisfério Sul,
+            a orientação para o Norte geográfico costuma
+            ser favorável para painéis solares fixos,
+            pois pode favorecer a captação de radiação
+            ao longo do ano.
+        </p>
+
+        <p>
+            Entretanto, o melhor posicionamento depende
+            da localização geográfica, da inclinação,
+            das sombras e do objetivo do sistema.
+        </p>
+
+        <h3>Como acompanhar a radiação?</h3>
+
+        <p>
+            Os piranômetros são instrumentos utilizados
+            para medir a irradiância solar, geralmente
+            expressa em watts por metro quadrado (W/m²).
+        </p>
+
+        <p>
+            Dependendo do modelo e da configuração,
+            podem medir a radiação global recebida
+            por uma superfície, incluindo contribuições
+            direta e difusa.
+        </p>
+
+    </div>
+
+    <div class="cards">
+
+        <article class="card">
+            <div class="emoji">🧭</div>
+            <h3>Direção</h3>
+            <p>
+                A orientação do coletor determina como
+                ele recebe a radiação ao longo do dia.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="emoji">📐</div>
+            <h3>Inclinação</h3>
+            <p>
+                O ângulo do coletor influencia a
+                quantidade de radiação recebida.
+            </p>
+        </article>
+
+        <article class="card">
+            <div class="emoji">📡</div>
+            <h3>Medição</h3>
+            <p>
+                Sensores permitem acompanhar as
+                variações da radiação solar.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+  
+<section id="limitacoes" class="section">
+
+    <h2>⚠️ Limitações dos sensores de luz</h2>
+
+    <p class="intro">
+        O LDR e o fotodiodo detectam luz, mas possuem
+        limitações quando utilizados para medir a
+        energia solar com precisão.
+    </p>
+
+    <div class="cards">
+
+        <article class="card">
+            <h3>🌈 Resposta espectral</h3>
+            <p>
+                Cada sensor responde a determinadas
+                faixas de comprimento de onda.
+                O LDR responde principalmente à luz visível,
+                enquanto muitos fotodiodos de silício
+                também detectam infravermelho próximo.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>📏 Falta de calibração</h3>
+            <p>
+                Os sensores fornecem resistência,
+                tensão ou corrente. Sem calibração
+                adequada, não é possível converter
+                essas leituras diretamente em W/m².
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>📉 Não linearidade e saturação</h3>
+            <p>
+                O LDR apresenta uma resposta
+                aproximadamente não linear.
+                O fotodiodo pode saturar quando
+                recebe luz muito intensa, dependendo
+                do circuito.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>🌡️ Temperatura</h3>
+            <p>
+                O aquecimento pode alterar as
+                características elétricas dos sensores
+                e influenciar suas leituras.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>⏱️ Tempo de resposta</h3>
+            <p>
+                O LDR costuma responder mais lentamente
+                às mudanças de iluminação. O fotodiodo
+                apresenta resposta muito mais rápida.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>📐 Ângulo de incidência</h3>
+            <p>
+                A quantidade de energia recebida
+                depende do ângulo entre a radiação
+                e a superfície do sensor.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>⌛ Envelhecimento</h3>
+            <p>
+                A exposição prolongada à luz e ao calor
+                pode alterar as características
+                e a sensibilidade dos componentes.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>📍 Área de medição</h3>
+            <p>
+                Um sensor pequeno mede uma região
+                limitada e pode não representar
+                toda a superfície de um coletor.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>☁️ Luz difusa e refletida</h3>
+            <p>
+                A leitura pode incluir luz direta,
+                luz espalhada pelas nuvens e luz
+                refletida por outras superfícies.
+            </p>
+        </article>
+
+        <article class="card">
+            <h3>💧 Luz não é calor</h3>
+            <p>
+                A intensidade luminosa não determina
+                sozinha o aquecimento da água.
+                Também existem perdas térmicas,
+                influência do vento e da temperatura
+                ambiente.
+            </p>
+        </article>
+
+    </div>
+
+    <div class="science-box">
+
+        <h3>Como contornar essas limitações?</h3>
+
+        <ul>
+            <li>Calibrar os sensores com instrumentos de referência.</li>
+            <li>Utilizar difusores adequados quando necessário.</li>
+            <li>Evitar aquecimento excessivo dos componentes.</li>
+            <li>Realizar várias medições e calcular médias.</li>
+            <li>Combinar sensores de luz com sensores de temperatura.</li>
+            <li>Utilizar piranômetros quando for necessário medir irradiância solar.</li>
+        </ul>
+
+    </div>
+
+</section>
+
+
+  
+<section id="piscina" class="section automation">
+
+    <h2>💧 Aplicação: aquecimento da piscina escolar</h2>
+
+    <p class="intro">
+        Como a radiação solar pode contribuir para
+        o aquecimento da água de uma piscina escolar?
+    </p>
+
+    <div class="science-box">
+
+        <p>
+            Os sensores de luz e o acompanhamento da
+            radiação solar possuem relação direta com
+            o aquecimento de uma piscina escolar.
+        </p>
+
+        <p>
+            A radiação solar chega à superfície da
+            piscina na forma de ondas eletromagnéticas.
+            Parte dessa energia é absorvida pela água
+            e pelos materiais ao redor, contribuindo
+            para o aumento de temperatura.
+        </p>
+
+        <p>
+            Fotodiodos podem ajudar a detectar a
+            intensidade da luz solar em diferentes
+            horários e posições.
+        </p>
+
+        <p>
+            Ao relacionar essas informações com
+            medições da temperatura da água, podemos
+            estudar como a disponibilidade de energia
+            solar influencia o aquecimento da piscina.
+        </p>
+
+        <p>
+            Em dias nublados ou em horários de menor
+            incidência solar, a disponibilidade de
+            energia tende a ser menor.
+        </p>
+
+    </div>
+
+    <div class="pool-illustration">
+
+        <div class="pool-sun">☀️</div>
+
+        <div class="pool-rays">
+            ↓ &nbsp; ↓ &nbsp; ↓
+        </div>
+
+        <div class="pool-water">
+            💧 🏊 💧
+        </div>
+
+        <p>
+            Radiação solar contribuindo para o
+            aquecimento da água.
+        </p>
+
+    </div>
+
+    <h3>Simulador de aquecimento solar da piscina</h3>
+
+    <p>
+        Modifique os valores para observar uma
+        estimativa teórica do aumento da temperatura.
+    </p>
+
+    <div class="simulator-box">
+
+        <label for="irradiance">
+            Irradiância solar (W/m²):
+            <strong id="irradianceValue">600</strong>
+        </label>
+
+        <input type="range" id="irradiance"
+            min="100" max="1000" step="50" value="600">
+
+        <label for="collectorArea">
+            Área do coletor (m²):
+            <strong id="areaValue">4</strong>
+        </label>
+
+        <input type="range" id="collectorArea"
+            min="1" max="20" value="4">
+
+        <label for="exposureTime">
+            Tempo de exposição (horas):
+            <strong id="timeValue">3</strong>
+        </label>
+
+        <input type="range" id="exposureTime"
+            min="1" max="10" value="3">
+
+        <label for="poolVolume">
+            Volume de água (litros):
+            <strong id="volumeValue">10000</strong>
+        </label>
+
+        <input type="range" id="poolVolume"
+            min="1000" max="30000" step="1000" value="10000">
+
+        <label for="efficiency">
+            Eficiência térmica estimada:
+            <strong id="efficiencyValue">35%</strong>
+        </label>
+
+        <input type="range" id="efficiency"
+            min="10" max="80" step="5" value="35">
+
+        <div class="pool-result">
+
+            <h3>Resultado da simulação</h3>
+
+            <p>Energia solar útil estimada:</p>
+            <strong id="energyResult">90,72 MJ</strong>
+
+            <p>Aumento teórico da temperatura:</p>
+            <strong id="temperatureResult">2,17 °C</strong>
+
+        </div>
+
+        <p class="simulation-warning">
+            Atenção: esta é uma estimativa didática
+            simplificada, considerando eficiência
+            constante e sem modelar separadamente
+            todas as perdas térmicas. Não representa
+            uma previsão real da temperatura da piscina.
+        </p>
+
+    </div>
+
+    <div class="science-box">
+
+        <h3>Por que precisamos medir a temperatura?</h3>
+
+        <p>
+            A luz recebida não é a mesma coisa que
+            o calor efetivamente transferido para
+            a água. Por isso, um sistema real deve
+            combinar o monitoramento da radiação solar
+            com sensores de temperatura.
+        </p>
+
+        <p>
+            Dessa forma, é possível acompanhar
+            as condições ambientais e estudar
+            estratégias para aproveitar melhor
+            a energia solar.
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- SIMULADOR -->
+
+    <section id="simulador" class="section simulator">
+
+        <h2>🔬 Simulador de radiação solar</h2>
+
+        <p class="intro">
+            Movimente o controle e observe como a intensidade
+            da luz influencia a leitura simulada do sensor.
+        </p>
+
+        <div class="simulator-box">
+
+            <label for="lightRange">
+                Intensidade da luz solar:
+            </label>
+
+            <input
+                type="range"
+                id="lightRange"
+                min="0"
+                max="100"
+                value="50"
+            >
+
+            <div class="range-labels">
+                <span>0% - Escuro</span>
+                <span>100% - Muito iluminado</span>
+            </div>
+
+            <div class="sensor-display">
+
+                <div id="sunIcon" class="sim-sun">
+                    ☀️
+                </div>
+
+                <h3 id="lightValue">50%</h3>
+
+                <p id="lightStatus">
+                    Luminosidade moderada
+                </p>
+
+                <div class="progress">
+                    <div id="progressBar"></div>
+                </div>
+
+            </div>
+
+            <div class="sensor-data">
+                <p>
+                    Resistência relativa do LDR:
+                    <strong id="resistance">50%</strong>
+                </p>
+
+                <p>
+                    Estado do sensor:
+                    <strong id="sensorState">Ativo</strong>
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMPARATIVO -->
+
+    <section id="comparativo" class="section">
+
+        <h2>📊 Comparativo de radiações</h2>
+
+        <p class="intro">
+            Compare as três regiões do espectro
+            eletromagnético relacionadas à radiação solar.
+        </p>
+
+        <div class="comparison">
+
+            <div class="compare-item">
+                <span>Ultravioleta</span>
+                <div class="bar">
+                    <div class="uv"></div>
+                </div>
+                <small>100–400 nm</small>
+            </div>
+
+            <div class="compare-item">
+                <span>Luz visível</span>
+                <div class="bar">
+                    <div class="visible"></div>
+                </div>
+                <small>400–700 nm</small>
+            </div>
+
+            <div class="compare-item">
+                <span>Infravermelho</span>
+                <div class="bar">
+                    <div class="infra"></div>
+                </div>
+                <small>Acima de 700 nm</small>
+            </div>
+
+        </div>
+
+        <div class="science-box">
+            <h3>Você sabia?</h3>
+
+            <p>
+                Nem todo sensor de luz consegue detectar
+                todas as regiões do espectro. Um LDR comum
+                responde principalmente à luz visível,
+                enquanto sensores específicos podem detectar
+                radiação UV ou infravermelha.
+            </p>
+        </div>
+
+    </section>
+
+
+    <!-- AUTOMAÇÃO -->
+
+    <section id="automacao" class="section automation">
+
+        <h2>💧 Automação sustentável</h2>
+
+        <p class="intro">
+            Imagine um sistema inteligente que utiliza
+            sensores para controlar a iluminação e ajudar
+            a economizar energia.
+        </p>
+
+        <div class="automation-box">
+
+            <div class="lamp" id="lamp">
+                💡
+            </div>
+
+            <h3 id="lampStatus">
+                Iluminação desligada
+            </h3>
+
+            <p id="automationMessage">
+                O ambiente está claro. Não é necessário
+                acender a iluminação.
+            </p>
+
+            <button id="autoButton" class="btn">
+                Ativar automação
+            </button>
+
+        </div>
+
+        <div class="science-box">
+
+            <h3>Impacto ambiental</h3>
+
+            <p>
+                Sistemas automatizados podem reduzir
+                o desperdício de energia elétrica,
+                aproveitando a iluminação natural
+                sempre que possível.
+            </p>
+
+            <p>
+                A energia solar também pode ser utilizada
+                em sistemas fotovoltaicos para gerar
+                eletricidade de forma renovável.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANIMAÇÃO -->
+
+    <section class="section">
+
+        <h2>🌞 Como a luz chega até a Terra?</h2>
+
+        <div class="animation-area">
+
+            <div class="animated-sun">☀️</div>
+
+            <div class="light-rays">
+                <span>〰️</span>
+                <span>〰️</span>
+                <span>〰️</span>
+            </div>
+
+            <div class="earth">🌎</div>
+
+        </div>
+
+        <p class="intro">
+            A energia emitida pelo Sol atravessa o espaço
+            na forma de ondas eletromagnéticas e chega
+            à atmosfera terrestre.
+        </p>
+
+    </section>
+
+
+    <!-- LIBRAS -->
+
+    <section id="acessibilidade" class="section">
+
+        <h2>🤝 Ciência para todos</h2>
+
+        <p class="intro">
+            A informação científica deve ser acessível
+            a todas as pessoas.
+        </p>
+
+        <div class="cards">
+
+            <article class="card">
+                <h3>👐 VLibras</h3>
+                <p>
+                    Tradução de conteúdos digitais
+                    para a Língua Brasileira de Sinais.
+                </p>
+            </article>
+
+            <article class="card">
+                <h3>🎥 Vídeos em Libras</h3>
+                <p>
+                    Área preparada para adicionar
+                    explicações científicas em Libras.
+                </p>
+
+                <video controls width="100%"
+                    aria-label="Vídeo explicativo em Libras">
+
+                    <source
+                        src="videos/libras/radiacao.mp4"
+                        type="video/mp4">
+
+                    Seu navegador não suporta vídeos.
+                </video>
+
+                <small>
+                    Substitua o arquivo pelo vídeo em Libras
+                    produzido para o projeto.
+                </small>
+            </article>
+
+            <article class="card">
+                <h3>⌨️ Navegação por teclado</h3>
+                <p>
+                    Utilize Tab para navegar, Enter
+                    para ativar links e botões e
+                    Shift + Tab para voltar.
+                </p>
+            </article>
+
+        </div>
+
+        <div class="access-controls">
+
+            <h3>Personalize sua leitura</h3>
+
+            <button id="contrastButton">
+                Alto contraste
+            </button>
+
+            <button id="dyslexiaButton">
+                Fonte para dislexia
+            </button>
+
+            <button id="increaseFont">
+                Aumentar fonte A+
+            </button>
+
+            <button id="decreaseFont">
+                Diminuir fonte A-
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- MAPA DO SITE -->
+
+    <section id="mapa" class="section sitemap">
+
+        <h2>🗺️ Mapa do site</h2>
+
+        <p>Explore todas as áreas do projeto:</p>
+
+        <div class="map-links">
+
+            <a href="#inicio">01 - Página inicial</a>
+            <a href="#ciencia">02 - Radiação eletromagnética</a>
+            <a href="#simulador">03 - Simulador de luz</a>
+            <a href="#comparativo">04 - Comparativo de radiações</a>
+            <a href="#automacao">05 - Automação sustentável</a>
+            <a href="#acessibilidade">06 - Acessibilidade e Libras</a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <h3>☀️ SOL + ÁGUA</h3>
+
+    <p>
+        Ciência, tecnologia, sustentabilidade e inclusão.
+    </p>
+
+    <p>
+        Projeto educativo sobre sensores de luz
+        e acompanhamento da radiação solar.
+    </p>
+
+    <small>Desenvolvido para fins educacionais.</small>
+
+</footer>
+
+
+<!-- Inicialização do VLibras -->
+
+<div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+        <div class="vw-plugin-top-wrapper"></div>
+    </div>
+</div>
+
+<script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>
+

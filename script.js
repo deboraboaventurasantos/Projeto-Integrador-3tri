@@ -312,36 +312,6 @@ if (automationButton && automationState) {
 
 // TAMANHO DA FONTE
 
-let fontScale = 100;
-
-function applyFontScale() {
-    document.documentElement.style.fontSize = fontScale + "%";
-}
-
-const increaseFont = document.getElementById("increaseFont");
-const decreaseFont = document.getElementById("decreaseFont");
-const resetFont = document.getElementById("resetFont");
-
-if (increaseFont) {
-    increaseFont.addEventListener("click", () => {
-        fontScale = Math.min(fontScale + 10, 150);
-        applyFontScale();
-    });
-}
-
-if (decreaseFont) {
-    decreaseFont.addEventListener("click", () => {
-        fontScale = Math.max(fontScale - 10, 80);
-        applyFontScale();
-    });
-}
-
-if (resetFont) {
-    resetFont.addEventListener("click", () => {
-        fontScale = 100;
-        applyFontScale();
-    });
-}
 
 
 // ALTO CONTRASTE
@@ -357,6 +327,44 @@ if (contrastButton) {
         contrastButton.textContent = ativo
             ? "Desativar alto contraste"
             : "Alto contraste";
+    });
+}
+
+
+ // TAMANHO DA FONTE
+
+let fontScale = 1;
+
+function applyFontScale() {
+    document.querySelectorAll(
+        "main, header, footer"
+    ).forEach(element => {
+        element.style.zoom = fontScale;
+    });
+}
+
+const increaseFont = document.getElementById("increaseFont");
+const decreaseFont = document.getElementById("decreaseFont");
+const resetFont = document.getElementById("resetFont");
+
+if (increaseFont) {
+    increaseFont.addEventListener("click", () => {
+        fontScale = Math.min(fontScale + 0.1, 1.5);
+        applyFontScale();
+    });
+}
+
+if (decreaseFont) {
+    decreaseFont.addEventListener("click", () => {
+        fontScale = Math.max(fontScale - 0.1, 0.8);
+        applyFontScale();
+    });
+}
+
+if (resetFont) {
+    resetFont.addEventListener("click", () => {
+        fontScale = 1;
+        applyFontScale();
     });
 }
 

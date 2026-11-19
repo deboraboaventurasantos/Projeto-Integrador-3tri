@@ -1192,3 +1192,96 @@ body.dyslexia-font {
   }
 }
 
+
+
+/* =====================================
+   ORGANIZAÇÃO DOS SIMULADORES
+===================================== */
+
+.simulators-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.simulator-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #dce6f0;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(20, 50, 80, 0.07);
+}
+
+.simulator-card h3 {
+  color: #12345a;
+  margin-bottom: 12px;
+}
+
+.simulator-content {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.simulator-content label {
+  font-weight: 700;
+  color: #173b60;
+}
+
+.simulator-content select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd8e5;
+  border-radius: 9px;
+  font: inherit;
+}
+
+.simulator-content input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.simulator-content .btn-primary {
+  width: fit-content;
+  min-width: 210px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 9px;
+  background: #174e83;
+  color: white;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.simulator-content .btn-primary:hover {
+  background: #10375d;
+}
+
+.simulator-result {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  margin-top: 8px;
+  border-radius: 10px;
+  background: #eef5fb;
+  border-left: 4px solid #e3b33d;
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .simulator-card {
+    padding: 20px;
+  }
+
+  .simulator-content .btn-primary {
+    width: 100%;
+  }
+}
+

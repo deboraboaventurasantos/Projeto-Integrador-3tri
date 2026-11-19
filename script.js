@@ -156,7 +156,7 @@ const poolAreaValue = document.getElementById("poolAreaValue");
 const sunHoursValue = document.getElementById("sunHoursValue");
 const poolVolumeValue = document.getElementById("poolVolumeValue");
 
-const calculatePool = document.getElementById("calculatePool");
+const calculatePool = document.getElementById("calculatePoolChallenge");
 const poolResult = document.getElementById("poolResult");
 
 

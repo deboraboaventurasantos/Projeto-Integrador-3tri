@@ -23,192 +23,16 @@ mainNav.querySelectorAll("a").forEach(link => {
 // Simulador de comparação de distâncias
 // Modelo ideal: intensidade proporcional a 1 / distância².
 
-function updateDistances() {
-  const ids = ["A", "B", "C"];
 
-  const distances = ids.map(id =>
-    Number(document.getElementById(`distance${id}`).value)
-  );
-
-  if (
-    distances.some(value =>
-      !Number.isFinite(value) || value <= 0
-    )
-  ) {
-    return;
-  }
-
-  const intensities = distances.map(distance =>
-    1 / (distance * distance)
-  );
-
-  const reference = Math.max(...intensities);
-
-  ids.forEach((id, index) => {
-    const relative = (intensities[index] / reference) * 100;
-
-    document.getElementById(`value${id}`).textContent =
-      `${relative.toLocaleString("pt-BR", {
-        maximumFractionDigits: 2
-      })} unidades relativas`;
-
-    document.getElementById(`bar${id}`).style.width =
-      `${relative}%`;
-  });
-
-  const highestIndex = intensities.indexOf(reference);
-
-  document.getElementById("distanceMessage").textContent =
-    `O sensor ${ids[highestIndex]} recebe a maior intensidade relativa neste exemplo.`;
-}
-
-["A", "B", "C"].forEach(id => {
-  document
-    .getElementById(`distance${id}`)
-    .addEventListener("input", updateDistances);
 });
 
 
 // Simulador de aquecimento da piscina
 // Q = irradiância x área x tempo x eficiência
 
-function calculatePool() {
-  const irradiance = Number(
-    document.getElementById("irradiance").value
-  );
-
-  const area = Number(
-    document.getElementById("collectorArea").value
-  );
-
-  const hours = Number(
-    document.getElementById("exposureTime").value
-  );
-
-  const liters = Number(
-    document.getElementById("waterVolume").value
-  );
-
-  const efficiency =
-    Number(document.getElementById("efficiency").value) / 100;
-
-  const values = [
-    irradiance,
-    area,
-    hours,
-    liters,
-    efficiency
-  ];
-
-  if (
-    values.some(value =>
-      !Number.isFinite(value) || value <= 0
-    ) ||
-    efficiency > 1
-  ) {
-    document.getElementById("energyResult").textContent =
-      "Verifique os valores";
-
-    document.getElementById("temperatureResult").textContent =
-      "—";
-
-    return;
-  }
-
-  const energyJoules =
-    irradiance * area * hours * 3600 * efficiency;
-
-  // Aproximação: 1 litro de água equivale a 1 kg.
-  const waterMassKg = liters;
-
-  const temperatureRise =
-    energyJoules / (waterMassKg * 4186);
-
-  document.getElementById("energyResult").textContent =
-    `${(energyJoules / 1e6).toLocaleString("pt-BR", {
-      maximumFractionDigits: 2
-    })} MJ`;
-
-  document.getElementById("temperatureResult").textContent =
-    `${temperatureRise.toLocaleString("pt-BR", {
-      maximumFractionDigits: 2
-    })} °C`;
-}
-
-document
-  .getElementById("calculatePool")
-  .addEventListener("click", calculatePool);
-
-
 // Simulador de luminosidade do LDR
 
-const lightRange = document.getElementById("lightRange");
 
-function updateLight() {
-  const light = Number(lightRange.value);
-  const resistance = 100 - light;
-
-  document.getElementById("lightValue").textContent =
-    `${light}%`;
-
-  document.getElementById("ldrResistance").textContent =
-    `${resistance}%`;
-
-  document.getElementById("meterFill").style.width =
-    `${light}%`;
-
-  let state = "Iluminação moderada";
-
-  if (light < 25) {
-    state = "Pouca iluminação";
-  } else if (light > 75) {
-    state = "Muita iluminação";
-  }
-
-  document.getElementById("lightState").textContent =
-    state;
-}
-
-lightRange.addEventListener("input", updateLight);
-updateLight();
-
-
-// Automação ilustrativa da iluminação
-
-let automationOn = false;
-
-document
-  .getElementById("automationButton")
-  .addEventListener("click", () => {
-    automationOn = !automationOn;
-
-    document.getElementById("automationState").textContent =
-      automationOn
-        ? "Iluminação ligada"
-        : "Iluminação desligada";
-
-    document.getElementById("automationButton").textContent =
-      automationOn
-        ? "Desativar automação"
-        : "Ativar automação";
-  });
-
-
-// Recursos de acessibilidade
-
-// Alto contraste
-document
-  .getElementById("contrastButton")
-  .addEventListener("click", () => {
-    document.body.classList.toggle("high-contrast");
-  });
-
-
-// Fonte OpenDyslexic
-document
-  .getElementById("dyslexiaButton")
-  .addEventListener("click", () => {
-    document.body.classList.toggle("dyslexia-font");
   });
 
 
@@ -241,3 +65,166 @@ document
     fontScale = 100;
     applyFontScale();
   });
+
+
+/* =====================================
+   SIMULADOR 1 - LDR OU FOTODIODO?
+===================================== */
+
+const checkSensor = document.getElementById("checkSensor");
+
+if (checkSensor) {
+  checkSensor.addEventListener("click", () => {
+    const scenario = document.getElementById("sensorScenario").value;
+    const result = document.getElementById("sensorResult");
+
+    const explanations = {
+      automatic: {
+        sensor: "LDR",
+        explanation:
+          "O LDR é adequado porque sua resistência elétrica varia conforme a intensidade da luz. Ele pode ajudar a identificar quando o ambiente está escuro e acionar uma lâmpada."
+      },
+      precision: {
+        sensor: "Fotodiodo",
+        explanation:
+          "O fotodiodo é uma boa escolha porque responde rapidamente à luz e pode detectar pequenas variações na intensidade luminosa."
+      },
+      brightness: {
+        sensor: "LDR",
+        explanation:
+          "O LDR é útil para monitorar a luminosidade de ambientes, pois sua resistência muda de acordo com a quantidade de luz recebida."
+      },
+      lightSignal: {
+        sensor: "Fotodiodo",
+        explanation:
+          "O fotodiodo é indicado para detectar sinais luminosos rápidos, pois possui resposta mais veloz que um LDR em muitas aplicações."
+      }
+    };
+
+    const answer = explanations[scenario];
+
+    result.innerHTML = `
+      <h4>Sensor indicado: ${answer.sensor}</h4>
+      <p>${answer.explanation}</p>
+    `;
+  });
+}
+
+
+/* =====================================
+   SIMULADOR 2 - HORÁRIOS DO SOL
+===================================== */
+
+const sunTime = document.getElementById("sunTime");
+
+function updateSunSimulation() {
+  if (!sunTime) return;
+
+  const visual = document.getElementById("sunVisual");
+  const result = document.getElementById("sunResult");
+
+  const periods = {
+    morning: {
+      title: "Manhã",
+      text:
+        "No período da manhã, a posição do Sol muda gradualmente. A incidência de radiação depende do horário, da estação do ano e das condições do céu.",
+      position: "25%"
+    },
+    noon: {
+      title: "Meio-dia",
+      text:
+        "Por volta do meio-dia solar, o Sol costuma atingir uma posição mais alta no céu. Em muitas situações, uma superfície bem orientada recebe maior incidência de radiação.",
+      position: "50%"
+    },
+    afternoon: {
+      title: "Tarde",
+      text:
+        "Durante a tarde, o Sol aparenta se deslocar em direção ao horizonte. A incidência sobre uma superfície pode diminuir ou mudar conforme sua orientação.",
+      position: "80%"
+    }
+  };
+
+  const selected = periods[sunTime.value];
+
+  visual.style.setProperty("--sun-position", selected.position);
+
+  result.innerHTML = `
+    <h4>${selected.title}</h4>
+    <p>${selected.text}</p>
+  `;
+}
+
+if (sunTime) {
+  sunTime.addEventListener("change", updateSunSimulation);
+  updateSunSimulation();
+}
+
+
+/* =====================================
+   SIMULADOR 3 - AQUECIMENTO DA PISCINA
+===================================== */
+
+const poolArea = document.getElementById("poolArea");
+const sunHours = document.getElementById("sunHours");
+const poolVolume = document.getElementById("poolVolume");
+
+function updatePoolValues() {
+  if (!poolArea || !sunHours || !poolVolume) return;
+
+  document.getElementById("poolAreaValue").textContent =
+    `${poolArea.value} m²`;
+
+  document.getElementById("sunHoursValue").textContent =
+    `${sunHours.value} horas`;
+
+  document.getElementById("poolVolumeValue").textContent =
+    `${poolVolume.value} litros`;
+}
+
+[poolArea, sunHours, poolVolume].forEach(input => {
+  if (input) {
+    input.addEventListener("input", updatePoolValues);
+  }
+});
+
+const calculatePool = document.getElementById("calculatePool");
+
+if (calculatePool) {
+  calculatePool.addEventListener("click", () => {
+    const area = Number(poolArea.value);
+    const hours = Number(sunHours.value);
+    const volume = Number(poolVolume.value);
+
+    // Valores didáticos aproximados:
+    // radiação média de 700 W/m² e eficiência de 45%.
+    const irradiance = 700;
+    const efficiency = 0.45;
+
+    const energy = irradiance * area * hours * 3600 * efficiency;
+
+    // Aproximação: 1 litro de água equivale a 1 kg.
+    const waterMass = volume;
+    const temperatureIncrease =
+      energy / (waterMass * 4186);
+
+    const result = document.getElementById("poolResult");
+
+    result.innerHTML = `
+      <h4>Resultado estimado</h4>
+      <p>
+        Energia aproveitada: ${(energy / 1000000).toFixed(2)} MJ
+      </p>
+      <p>
+        Aumento teórico de temperatura:
+        <strong>${temperatureIncrease.toFixed(2)} °C</strong>
+      </p>
+      <p>
+        Esta é uma estimativa simplificada. Na prática, perdas de calor,
+        temperatura inicial, circulação da água, clima e características
+        do coletor alteram o resultado.
+      </p>
+    `;
+  });
+}
+
+updatePoolValues();
